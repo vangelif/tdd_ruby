@@ -117,4 +117,15 @@ describe '#fizzbuzz method returned values' do
     expect(s.fizzbuzz(n2)).to eql(expected_result)
     expect(s.fizzbuzz(n3)).to eql(expected_result)
   end
+
+  it 'returns \'buzz\' when it receives a number divisible by 5' do
+    s = Solver.new
+    n1 = 5
+    n2 = 10
+    n3 = 20
+    expected_result = 'buzz'
+    expect(s.fizzbuzz(n1)).to eql(expected_result)
+    expect(s.fizzbuzz(n2)).to eql(expected_result)
+    expect(s.fizzbuzz(n3)).to eql(expected_result)
+  end
 end

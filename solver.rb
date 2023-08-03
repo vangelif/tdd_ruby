@@ -22,6 +22,8 @@ class Solver
   def fizzbuzz(num)
     return 'fizz' if (num % 3).zero?
 
+    return 'buzz' if (num % 5).zero?
+
     String.new
   end
 end
