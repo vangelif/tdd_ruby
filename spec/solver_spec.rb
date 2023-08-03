@@ -91,4 +91,10 @@ describe '#fizzbuzz method accepted arguments' do
     expect(s).to receive(:fizzbuzz).with(kind_of(String)).exactly(1)
     s.fizzbuzz('some string')
   end
+
+  it 'the received argument is an Integer' do
+    s = instance_double('Solver')
+    expect(s).to receive(:fizzbuzz).with(kind_of(Integer)).exactly(1)
+    s.fizzbuzz(0)
+  end
 end
