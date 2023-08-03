@@ -26,6 +26,6 @@ class Solver
 
     return 'buzz' if (num % 5).zero?
 
-    String.new
+    num.to_s
   end
 end

@@ -139,4 +139,14 @@ describe '#fizzbuzz method returned values' do
     expect(s.fizzbuzz(n2)).to eql(expected_result)
     expect(s.fizzbuzz(n3)).to eql(expected_result)
   end
+
+  it 'returns the provided number as a string if number is not divisible by 3 or 5' do
+    s = Solver.new
+    n1 = 11
+    n2 = 7
+    n3 = 1
+    expect(s.fizzbuzz(n1)).to eql(n1.to_s)
+    expect(s.fizzbuzz(n2)).to eql(n2.to_s)
+    expect(s.fizzbuzz(n3)).to eql(n3.to_s)
+  end
 end
