@@ -16,6 +16,14 @@ describe Solver do
       expect(s.methods.include?(:factorial)).to be_truthy
     end
 
+    it 'receives an Integer argument' do
+      s = instance_double('Solver')
+      allow(s).to receive(:factorial)
+
+      expect(s).to receive(:factorial).with(kind_of(Integer))
+      s.factorial(0)
+    end
+
     it 'returns the correct factorial for positive integers' do
       s = Solver.new
       expect(s.factorial(1)).to eq(1)
