@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require_relative '../solver'
+require 'pry'
 
 describe Solver do
   describe 'can create objects from Solver?' do
@@ -11,7 +12,7 @@ describe Solver do
   end
 
   describe '#factorial method' do
-    it 'has a \'factorial\' method' do
+    it '\'factorial\' method exist' do
       s = Solver.new
       expect(s.methods.include?(:factorial)).to be_truthy
     end
@@ -45,9 +46,23 @@ describe Solver do
   end
 
   describe '#reverse method' do
-    it 'has a \'reverse\' method' do
+    it '\'reverse\' method exist' do
       s = Solver.new
       expect(s.methods.include?(:reverse)).to be_truthy
+    end
+
+    it 'receives a String argument' do
+      s = instance_double('Solver')
+
+      expect(s).to receive(:reverse).with(kind_of(String))
+      s.reverse('some string')
+    end
+    
+    it 'receives only one argument' do
+      s = instance_double('Solver')
+      # binding.pry
+      expect(s.reverse).to receive(kind_of(String))
+      s.reverse('some string')
     end
 
     it 'returns the reverse of a word' do
