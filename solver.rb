@@ -19,6 +19,6 @@ class Solver
     word.reverse
   end
 
-  def fizzbuzz
+  def fizzbuzz(n)
   end
 end

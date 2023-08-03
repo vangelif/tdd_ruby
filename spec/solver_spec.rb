@@ -84,3 +84,11 @@ describe '#reverse method' do
     expect(s.reverse(word)).to eq(expected_result)
   end
 end
+
+describe '#fizzbuzz method accepted arguments' do
+  it 'receives one argument' do
+    s = instance_double('Solver')
+    expect(s).to receive(:fizzbuzz).with(kind_of(String)).exactly(1)
+    s.fizzbuzz('some string')
+  end
+end
