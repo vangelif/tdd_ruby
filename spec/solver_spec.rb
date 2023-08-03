@@ -63,7 +63,7 @@ describe '#factorial method returned values' do
   end
 end
 
-describe '#reverse method' do
+describe '#reverse method accepted arguments' do
   it 'receives a String argument' do
     s = instance_double('Solver')
     expect(s).to receive(:reverse).with(kind_of(String))
@@ -75,7 +75,9 @@ describe '#reverse method' do
     expect(s).to receive(:reverse).with(kind_of(String)).exactly(1)
     s.reverse('some string')
   end
+end
 
+describe '#reverse method returned values' do
   it 'returns the reversed received string' do
     s = Solver.new
 
@@ -96,5 +98,23 @@ describe '#fizzbuzz method accepted arguments' do
     s = instance_double('Solver')
     expect(s).to receive(:fizzbuzz).with(kind_of(Integer)).exactly(1)
     s.fizzbuzz(0)
+  end
+end
+
+describe '#fizzbuzz method returned values' do
+  it 'returns a string' do
+    s = Solver.new
+    expect(s.fizzbuzz(2)).to be_an_instance_of(String)
+  end
+
+  it 'returns \'fizz\' when it receives a number divisible by 3' do
+    s = Solver.new
+    n1 = 3
+    n2 = 6
+    n3 = 9
+    expected_result = 'fizz'
+    expect(s.fizzbuzz(n1)).to eql(expected_result)
+    expect(s.fizzbuzz(n2)).to eql(expected_result)
+    expect(s.fizzbuzz(n3)).to eql(expected_result)
   end
 end
