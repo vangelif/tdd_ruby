@@ -20,6 +20,11 @@ describe Solver do
       s = Solver.new
       expect(s.methods.include?(:reverse)).to be_truthy
     end
+
+    it '#fizzbuzz method exists' do
+      s = Solver.new
+      expect(s.methods.include?(:fizzbuzz)).to be_truthy
+    end
   end
 end
 
