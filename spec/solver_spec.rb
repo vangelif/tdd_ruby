@@ -31,4 +31,13 @@ describe Solver do
       expect { s.factorial(-10) }.to raise_error(ArgumentError, 'Input must be a non-negative integer')
     end
   end
+  describe '#reverse' do
+    it 'returns the reverse of a word' do
+      s = Solver.new
+      
+      word = 'hello'
+      expected_result = 'olleh'
+      expect(s.reverse(word)).to eq(expected_result)
+    end
+  end
 end
