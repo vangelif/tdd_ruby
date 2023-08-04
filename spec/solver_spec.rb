@@ -26,6 +26,7 @@ describe Solver do
       expect(s.factorial(0)).to eq(1)
     end
     it 'raises an ArgumentError' do
+      s = Solver.new
       expect { s.factorial(-1) }.to raise_error(ArgumentError, 'Input must be a non-negative integer')
       expect { s.factorial(-10) }.to raise_error(ArgumentError, 'Input must be a non-negative integer')
     end

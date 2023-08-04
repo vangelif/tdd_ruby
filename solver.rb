@@ -2,7 +2,9 @@
 
 class Solver
   def factorial(number)
-    if number.zero?
+    if number.negative?
+      raise ArgumentError, 'Input must be a non-negative integer'
+    elsif number.zero?
       1
     else
       number * factorial(number - 1)
