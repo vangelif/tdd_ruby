@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 class Solver
-  def factorial(num)
+  def factorial(number)
+
   end
 end

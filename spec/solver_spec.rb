@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative '../solver'
 
 describe Solver do
@@ -11,8 +13,15 @@ describe Solver do
     expect(s.methods.include?(:factorial)).to be_truthy
   end
 
-  it 'returns the correct factorial for positive integers' do 
-    expect(factorial(1)).to eq(1)
-    expect(factorial(5)).to eq(120)
+  describe '#factorial' do
+    it 'returns the correct factorial for positive integers' do
+      s = Solver.new
+      expect(s.factorial(1)).to eq(1)
+      expect(s.factorial(5)).to eq(120)
+    end
+    it 'returns 1 for input 0' do
+      s = Solver.new
+      expect(s.factorial(0)).to eq(1)
+    end
   end
 end
