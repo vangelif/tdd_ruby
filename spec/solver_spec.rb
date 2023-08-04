@@ -10,4 +10,9 @@ describe Solver do
     s = Solver.new
     expect(s.methods.include?(:factorial)).to be_truthy
   end
+
+  it 'returns the correct factorial for positive integers' do 
+    expect(factorial(1)).to eq(1)
+    expect(factorial(5)).to eq(120)
+  end
 end
