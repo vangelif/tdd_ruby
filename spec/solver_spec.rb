@@ -18,10 +18,16 @@ describe Solver do
       s = Solver.new
       expect(s.factorial(1)).to eq(1)
       expect(s.factorial(5)).to eq(120)
+      expect(s.factorial(7)).to eq(5040)
+      expect(s.factorial(10)).to eq(3_628_800)
     end
     it 'returns 1 for input 0' do
       s = Solver.new
       expect(s.factorial(0)).to eq(1)
+    end
+    it 'raises an ArgumentError' do
+      expect { s.factorial(-1) }.to raise_error(ArgumentError, 'Input must be a non-negative integer')
+      expect { s.factorial(-10) }.to raise_error(ArgumentError, 'Input must be a non-negative integer')
     end
   end
 end
