@@ -85,7 +85,7 @@ gem install
 👤 **Vangelis**
 
 - GitHub: [@V](https://github.com/vangelif)
-- LinkedIn: [@V](in/vangfot)
+- LinkedIn: [@V](https://www.linkedin.com/in/vangfot)
 
 👤 **Luiz**
 
